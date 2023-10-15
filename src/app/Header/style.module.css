@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-content);
+  align-items: center;
+}
+
+.header h1 {
+  font-family: var(--font-calistoga);
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-contato {
+  border-radius: 0.3125rem;
+  padding: 0.5rem 1rem;
+  background: var(--secondary);
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2rem; /* 160% */
+}
