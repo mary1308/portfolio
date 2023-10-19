@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Presentation from "./Presentation";
 import Projects from "./Projects";
+import ModalOpino from "./Projects/Modal/Opino";
 import Skills from "./Skills";
 
 const App = () => {

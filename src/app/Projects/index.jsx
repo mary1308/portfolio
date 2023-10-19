@@ -5,13 +5,34 @@ import capaOpino from "../../../public/projects/Opino.png";
 import capaImoveis from "../../../public/projects/Imoveis.png";
 import capaProduto from "../../../public/projects/Produto.png";
 import Image from "next/image";
-import { Box, Modal } from "@mui/material";
 import { useState } from "react";
+import { ModalOpino, ModalImoveis } from "./Modal";
 
 export default function Projects() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => {
-    setModalIsOpen(true);
+  const [modalIsOpen, setModalIsOpen] = useState({
+    opino: false,
+    imoveis: false
+  });
+  const openModal = (id) => {
+    if (id === "opino") {
+      setModalIsOpen({
+        opino: true,
+        imoveis: false
+      });
+
+    } else {
+      setModalIsOpen({
+        opino: false,
+        imoveis: true
+      });
+    }
+  };
+
+  const closeModal = (id) => {
+    setModalIsOpen((modals) => ({
+      ...modals,
+      [id]: false
+    }));
   };
 
   return (
@@ -22,11 +43,11 @@ export default function Projects() {
           <div className={style.card}>
             <h2>UX/UI Designer</h2>
             <div className={style.content}>
-              <div className={style.contentChildren} onClick={openModal}>
+              <div className={style.contentChildren} onClick={() => openModal("opino")}>
                 <Image className={style.capa} src={capaOpino} />
                 <h6>Opino</h6>
               </div>
-              <div className={style.contentChildren}>
+              <div className={style.contentChildren} onClick={() => openModal("imoveis")}>
                 <Image className={style.capa} src={capaImoveis} />
                 <h6>Imoveis</h6>
               </div>
@@ -44,29 +65,8 @@ export default function Projects() {
           </div>
         </div>
       </section>
-
-      <Modal open={modalIsOpen}>
-        <section className={style.modal}>
-          <div className={style.header}>
-            <div className={style.text}>
-              <h3>Opino</h3>
-              <p>Software que reune avaliações de restaurantes. </p>
-            </div>
-            <Image className={style.capaHeader} src={capaOpino} />
-          </div>
-          <div className={style.body}>
-            <h3>Etapas</h3>
-            <div className={style.buttons}>
-              <button>Necessidades dos usuários</button>
-              <button>Personas de usuário</button>
-              <button>Jornada do usuário</button>
-              <button>Fluxo do usuário</button>
-              <button>Wireframe de baixa fidelidade</button>
-              <button>Interface do usuário</button>
-            </div>
-          </div>
-        </section>
-      </Modal>
+      <ModalOpino isOpen={modalIsOpen.opino} closeModal={() => closeModal("opino")} />
+      <ModalImoveis isOpen={modalIsOpen.imoveis} closeModal={() => closeModal("imoveis")} />
     </>
   );
 }

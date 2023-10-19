@@ -26,6 +26,7 @@
   gap: 2rem;
   flex-wrap: wrap;
 }
+
 .card {
   display: flex;
   padding: 2rem;
@@ -77,94 +78,5 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-}
-
-/* modal*/
-
-.modal {
-  position: "absolute";
-  top: "50%";
-  left: "50%";
-  transform: "translate(-50%, -50%)";
-  width: 61.5rem;
-  height: 43rem;
-
-  display: inline-flex;
-  padding-bottom: 0px;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.625rem;
-
-  border-radius: 0.5rem;
-  background: #fff;
-  border: "2px solid #000";
-}
-
-.header {
-  display: flex;
-  padding: 2.5rem 4rem;
-  align-items: center;
-  gap: 5rem;
-  align-self: stretch;
-  background: #fbfbfb;
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  flex: 1 0 0;
-}
-
-.header h3,
-.body h3 {
-  color: var(--primary);
-  text-align: center;
-  font-family: var(--font-calistoga);
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.capaHeader {
-  width: 12.5rem;
-  height: 12.5rem;
-  border-radius: 0.5rem;
-  border: 1px solid #cecece;
-  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
-}
-
-.body {
-  display: flex;
-  padding: 2.5rem 4rem;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2rem;
-  align-self: stretch;
-}
-
-.buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
-  align-self: stretch;
-}
-
-.buttons button {
-  display: flex;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  align-self: stretch;
-  border-radius: 0.5rem;
-  background: var(--secondary);
-  color: var(--primary);
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  cursor: pointer;
 }
